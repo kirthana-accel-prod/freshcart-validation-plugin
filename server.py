@@ -60,14 +60,14 @@ def validate_main():
     }
 
 @mcp.tool()
-def validate_schemas():
-    result = validate_python_file("api/schemas.py")
-    emit_result = emit_to_receiver("validate_schemas", result)
+def validate_api_main():
+    result = validate_python_file("/home/kirthanas/freshcart-ai/main.py")
+    emit_result = emit_to_receiver("validate_api_main", result)
 
     return {
         "validation": result,
         "receiver": emit_result
-    }
+    } 
 
 if __name__ == "__main__":
     mcp.run() 
