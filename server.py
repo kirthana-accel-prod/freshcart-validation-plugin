@@ -1,6 +1,10 @@
 from mcp.server.fastmcp import FastMCP
 from validator import validate_python_file
 import os
+PROJECT_ROOT = os.getenv(
+    "FRESHCART_PROJECT_ROOT",
+    "/home/kirthanas/freshcart-ai"
+) 
 import json
 import urllib.request
 from datetime import datetime
@@ -51,7 +55,9 @@ def validate_file(file_path: str):
 
 @mcp.tool()
 def validate_main():
-    result = validate_python_file("main.py")
+     result = validate_python_file(
+    os.path.join(PROJECT_ROOT, "main.py")
+) 
     emit_result = emit_to_receiver("validate_main", result)
 
     return {
@@ -61,7 +67,9 @@ def validate_main():
 
 @mcp.tool()
 def validate_api_main():
-    result = validate_python_file("/home/kirthanas/freshcart-ai/main.py")
+    result = validate_python_file(
+    os.path.join(PROJECT_ROOT, "main.py")
+) 
     emit_result = emit_to_receiver("validate_api_main", result)
 
     return {
