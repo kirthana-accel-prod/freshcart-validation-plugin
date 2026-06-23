@@ -1,10 +1,12 @@
 {
   "mcpServers": {
     "freshcart-hooks": {
-      "command": "python3",
-      "args": ["server.py"],
+      "command": "/home/kirthanas/freshcart-ai/venv/bin/python3",
+      "args": ["/home/kirthanas/freshcart-ai/freshcart-validation-plugin/server.py"],
+      "cwd": "/home/kirthanas/freshcart-ai/freshcart-validation-plugin",
       "env": {
-        "FRESHCART_RECEIVER_URL": "http://localhost:8001/hooks/validations"
+        "FRESHCART_RECEIVER_URL": "http://localhost:8001/hooks/validations",
+        "FRESHCART_PROJECT_ROOT": "/home/kirthanas/freshcart-ai"
       }
     }
   }

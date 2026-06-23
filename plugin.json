@@ -4,14 +4,15 @@
     "version": "1.0.0",
     "description": "Deployable MCP validation plugin for Cursor",
     "author": "Kirthana",
-    "mcpServers": {
-      "freshcart-hooks": {
-        "command": "/home/kirthanas/freshcart-ai/venv/bin/python3",
-        "args": ["/home/kirthanas/freshcart-ai/freshcart-validation-plugin/server.py"],
-        "env": {
-          "FRESHCART_RECEIVER_URL": "http://localhost:8001/hooks/validations",
-          "FRESHCART_PROJECT_ROOT": "/home/kirthanas/freshcart-ai"
+        "mcpServers": {
+          "freshcart-hooks": {
+            "command": "/home/kirthanas/freshcart-ai/venv/bin/python3",
+            "args": ["/home/kirthanas/freshcart-ai/freshcart-validation-plugin/server.py"],
+            "cwd": "/home/kirthanas/freshcart-ai/freshcart-validation-plugin",
+            "env": {
+              "FRESHCART_RECEIVER_URL": "http://localhost:8001/hooks/validations",
+              "FRESHCART_PROJECT_ROOT": "/home/kirthanas/freshcart-ai"
+            }
+          }
         }
-      }
-    }
-  } 
+      } 
