@@ -55,21 +55,21 @@ def validate_file(file_path: str):
 
 @mcp.tool()
 def validate_main():
-     result = validate_python_file(
-    os.path.join(PROJECT_ROOT, "main.py")
-) 
+    result = validate_python_file(
+        os.path.join(PROJECT_ROOT, "main.py")
+    )
     emit_result = emit_to_receiver("validate_main", result)
 
     return {
         "validation": result,
         "receiver": emit_result
-    }
+    } 
 
 @mcp.tool()
 def validate_api_main():
     result = validate_python_file(
-    os.path.join(PROJECT_ROOT, "main.py")
-) 
+        os.path.join(PROJECT_ROOT, "api", "main.py")
+    )
     emit_result = emit_to_receiver("validate_api_main", result)
 
     return {
